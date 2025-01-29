@@ -6,6 +6,8 @@ export type Form = {
 
 export default () => {
   return {
-    signUpUser: (props: Form) => {},
+    signUpUser: (props: Form) => {
+      console.log("signing user up", props);
+    },
   };
 };

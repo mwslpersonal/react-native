@@ -5,6 +5,7 @@ import { Form as FormType } from "@/hooks/useForm";
 import { FC, useReducer } from "react";
 import { StyleSheet, View } from "react-native";
 import { PageTitle } from "./PageTitle";
+import { nameValidation } from "@/utils/nameValidation";
 
 type FormProps = {
   onSignUp: (form: FormType) => void;
@@ -30,12 +31,6 @@ export const Form: FC<FormProps> = ({ onSignUp }) => {
     name: "",
     age: 1,
   });
-
-  const nameValidation = (name: string) => {
-    const hasNumber = !!name.match(/\d+/);
-    if (hasNumber) return "Name can only contain letters!";
-    return "";
-  };
 
   return (
     <View style={styles.formContainer}>
